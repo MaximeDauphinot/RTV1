@@ -35,12 +35,12 @@ int		main(int ac, char **av)
 	tmp = ft_get_file(av[1]);
 	find_obj(&m, tmp);
 	reboot_list(&m);
-	print_list(&m);
+	GD();
 	init_struct(&m);
 	viewplane(&m);
 	mlx_hook(m.mlx.win, 17, 0L, redcross, &m);
-	//mlx_key_hook(m.mlx.win, ft_keyhook, &m);
-	//mlx_hook(m.mlx.win, KEY_PRESS, KEY_PRESS_MASK, (void *)ft_keyhook, &m);
+	mlx_key_hook(m.mlx.win, ft_keyhook, &m);
+	mlx_hook(m.mlx.win, KEY_PRESS, KEY_PRESS_MASK, (void *)ft_keyhook, &m);
 	//mlx_loop_hook(m.mlx.mlx, loop_hook, &m);
 	mlx_loop(m.mlx.mlx);
 	free(tmp);

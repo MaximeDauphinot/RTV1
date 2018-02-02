@@ -25,9 +25,9 @@ SPHERE
 		CentreY = -2.00
 		CentreZ = 60.00
 		Rayon = 6.00
-		R = 155
+		R = 255
 		G = 015
-		B = 255
+		B = 055
 	------
 CYLINDRE
 	new :
@@ -37,7 +37,7 @@ CYLINDRE
 		CentreZ = 80.00
 		Radius = 6.00
 		R = 155
-		G = 225
+		G = 125
 		B = 215
 	------
 PLAN
@@ -59,7 +59,7 @@ CONE
 		CentreX = 20.00
 		CentreY = 05.00
 		CentreZ = 100.00
-		R = 255
+		R = 000
 		G = 255
-		B = 255
+		B = 000
 	------

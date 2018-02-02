@@ -28,7 +28,7 @@
 	else if (key == 22)
 		i = 6;
 	while (m->objs->num_obj != i)
-}
+}*/
 
 int		ft_keyhook(int key, t_coef *m)
 {
@@ -36,7 +36,7 @@ int		ft_keyhook(int key, t_coef *m)
 	if (key == 53)
 	{
 		exit(EXIT_SUCCESS);
-	}
+	}/*
 	else if (key == 18 || key == 19 || key == 20
 		|| key == 21 || key == 23 || key == 22 || key == 26 || key == 28)
 	{
@@ -45,11 +45,10 @@ int		ft_keyhook(int key, t_coef *m)
 	}
 	printf("%d\n", key);
 
-
+*/
 	return (0);
 
 }
-*/
 /*int		ft_keyhook2(int key, t_coef *m)
 {
 	//printf("%d\n", key);
