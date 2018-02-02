@@ -1,0 +1,65 @@
+SPHERE
+	new :
+		type = 1
+		CentreX = 5.00
+		CentreY = 0.00
+		CentreZ = 70.00
+		Rayon = 5.00
+		R = 66
+		G = 69
+		B = 255
+SPHERE
+	new :
+		type = 1
+		CentreX = 12.00
+		CentreY = 8.00
+		CentreZ = 60.00
+		Rayon = 6.00
+		R = 055
+		G = 215
+		B = 155
+SPHERE
+	new :
+		type = 1
+		CentreX = -6.00
+		CentreY = -2.00
+		CentreZ = 60.00
+		Rayon = 6.00
+		R = 155
+		G = 015
+		B = 255
+	------
+CYLINDRE
+	new :
+		type = 2
+		CentreX = -10.00
+		CentreY = 0.00
+		CentreZ = 80.00
+		Radius = 6.00
+		R = 155
+		G = 225
+		B = 215
+	------
+PLAN
+	new :
+		type = 3
+		CentreX = 10.00
+		CentreY = 00.00
+		CentreZ = 1.00
+		NormaleX = 00.00
+		NormaleY = 01.00
+		NormaleZ = 00.00
+		R = 255
+		G = 102
+		B = 000
+	------
+CONE
+	new :
+		type = 4
+		CentreX = 20.00
+		CentreY = 05.00
+		CentreZ = 100.00
+		R = 255
+		G = 255
+		B = 255
+	------
