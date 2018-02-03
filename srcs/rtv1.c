@@ -31,7 +31,7 @@ int		main(int ac, char **av)
 	i = 0;
 	if (ac != 2)
 		ft_putendl("Usage: ./RTV1 <filename.txt>");
-	tmp = malloc(sizeof(av[1] + 1));
+	//tmp = malloc(sizeof(av[1]));
 	tmp = ft_get_file(av[1]);
 	find_obj(&m, tmp);
 	reboot_list(&m);
@@ -44,5 +44,6 @@ int		main(int ac, char **av)
 	//mlx_loop_hook(m.mlx.mlx, loop_hook, &m);
 	mlx_loop(m.mlx.mlx);
 	free(tmp);
+	// wait(200);
 	return (0);
 }

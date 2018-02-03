@@ -91,6 +91,10 @@ static void	sort_obj(t_coef *m)
 	{
 		IntersectCone(m);
 	}
+	else if (m->objs->type == 5)
+	{
+		IntersectSphere(m);
+	}
 }
 
 void 	calc_intersect(t_coef *m)
@@ -102,36 +106,54 @@ void 	calc_intersect(t_coef *m)
 }
 
 /*static double	is_shadow(t_coef *m)
-  {
+{
   t_repere	tmp;
   t_repere	tmp2;
+  int 		couleur;
 
 
   tmp2 = m->ray.VecDirRay;
-  m->ray.VecDirRay = sous_vector(&m->light.LightPos, &m->plan.Intersect);
+  m->ray.VecDirRay = sous_vector(&m->light.LightPos, &m->objs->intsct);
   tmp = m->ray.CamPos;
-  m->ray.CamPos = m->plan.Intersect;
-  if (IntersectCylindre(m) >= 0)
+  m->ray.CamPos = m->objs->pos;
+  sort_obj(m);
+  if (m->objs->t >= 0)
   {
-  m->ray.VecDirRay = tmp2;
-  m->ray.CamPos = tmp;
-  return (0x00);
+	m->ray.VecDirRay = tmp2;	
+	m->ray.CamPos = tmp;
+	couleur = 0x00;
+	fill_px(m, x, y, couleur);
   }
   else
   {
-  m->ray.VecDirRay = tmp2;
-  m->ray.CamPos = tmp;
-  return (light_plan(m));
+  	m->ray.VecDirRay = tmp2;
+  	m->ray.CamPos = tmp;
+  	return (light(m));
   }
-  }
-  */
+}*/
+ 
+void 	check_dist(t_coef *m, int num_mail, int x, int y)
+{
+	double 		couleur;
+
+	reboot_fast(m);
+	while (m->objs->num_obj != num_mail)
+		m->objs = m->objs->next;
+	if (m->objs->t >= 0)
+	{
+		couleur = light(m);
+		fill_px(m, x, y, couleur);
+	}
+	else
+		fill_px(m, x, y, BLACK);
+}
+
 void	viewplane(t_coef *m)
 {
 	int			x;
 	int			y;
 	double		tmp;
 	int 		num_mail;
-	double 		couleur;
 
 	while (y < ResY)
 	{
@@ -150,18 +172,9 @@ void	viewplane(t_coef *m)
 					tmp = m->objs->t;
 					num_mail = m->objs->num_obj;
 				}
-				m->objs = m->objs->next;				
+				m->objs = m->objs->next;		
 			}
-			reboot_fast(m);
-			while (m->objs->num_obj != num_mail)
-				m->objs = m->objs->next;
-			if (m->objs->t >= 0)
-			{
-				couleur = light(m);
-				fill_px(m, x, y, couleur);
-			}
-			else
-				fill_px(m, x, y, BLACK);
+			check_dist(m, num_mail, x, y);
 			x += m->pixx;
 		}
 		y += m->pixx;

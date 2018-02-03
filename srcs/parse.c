@@ -57,8 +57,8 @@ int	init_list(t_obj **obj)
 	(*obj)->color.x = 0;
 	(*obj)->color.y = 0;
 	(*obj)->color.z = 0;
-	(*obj)->CD = 0;
 	(*obj)->CA = 0;
+	(*obj)->CD = 0;
 	(*obj)->rayon = 0;
 	(*obj)->angle = 0;
 	(*obj)->t = 0;
@@ -77,13 +77,22 @@ int		check_list(t_coef *m)
 	else if (m->nb_mail == 0)
 	{
 		if ((m->objs = (t_obj *)malloc(sizeof(t_obj))) != NULL)
-		{
-	
+		{	
 			m->objs->prev = NULL;
 			m->objs->next = NULL;
 		}
 	}
 	return (0);
+}
+
+int 	ft_check(char **str, int i, int j, int k)
+{
+	int a;
+
+	a = 0;
+	while (str[i + j][k++] != '\n')
+		a++;
+	return (a);
 }
 
 void	reboot_list(t_coef *m)
@@ -121,6 +130,10 @@ int		find_obj(t_coef *m, char **scene)
 		else if (ft_strequ(scene[i], "CONE"))
 		{
 			get_cone_value(m, scene, i);
+		}
+		else if (ft_strequ(scene[i], "SPOT"))
+		{
+			get_spot_value(m, scene, i);
 		}
 		i++;
 	}

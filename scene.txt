@@ -4,27 +4,27 @@ SPHERE
 		CentreX = 5.00
 		CentreY = 0.00
 		CentreZ = 70.00
-		Rayon = 5.00
+		Rayon = 4.00
 		R = 66
 		G = 69
 		B = 255
 SPHERE
 	new :
 		type = 1
-		CentreX = 12.00
+		CentreX = -12.00
 		CentreY = 8.00
 		CentreZ = 60.00
-		Rayon = 6.00
+		Rayon = 3.00
 		R = 055
 		G = 215
-		B = 155
+		B = 055
 SPHERE
 	new :
 		type = 1
 		CentreX = -6.00
 		CentreY = -2.00
 		CentreZ = 60.00
-		Rayon = 6.00
+		Rayon = 2.50
 		R = 255
 		G = 015
 		B = 055
@@ -57,7 +57,7 @@ CONE
 	new :
 		type = 4
 		CentreX = 20.00
-		CentreY = 05.00
+		CentreY = 10.00
 		CentreZ = 100.00
 		R = 000
 		G = 255

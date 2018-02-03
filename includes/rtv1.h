@@ -158,12 +158,13 @@ void				get_sphere_value(t_coef *m, char **scene, int i);
 void				get_cylindre_value(t_coef *m, char **scene, int i);
 void				get_plan_value(t_coef *, char **scene, int i);
 void				get_cone_value(t_coef *m, char **scene, int i);
+void				get_spot_value(t_coef *m, char **scene, int i);
 int					check_list(t_coef *m);
 int					find_obj(t_coef *m, char **scene);
 void				reboot_list(t_coef *m);
 void				reboot_fast(t_coef *m);
 int					init_list(t_obj **obj);
 char				**ft_get_file(char *file);
-void				print_list(t_coef *m);
+int 				ft_check(char **str, int i, int j, int k);
 
 #endif
